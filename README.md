@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# Grocery Store Management System UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**API Repository:** [https://github.com/Jakemoeller03/GroceryStoreManager](https://github.com/Jakemoeller03/GroceryStoreManager)
 
-## Available Scripts
+This is a full-stack grocery store management system built with Spring Boot (backend) and React (frontend), deployed on a Google Cloud VM. It allows store staff to manage product listings, handle orders, and maintain inventory with a user-friendly interface.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Authenticated Login System** - Secure staff user authentication
+- **Inventory Management** - Complete CRUD operations for products with image management
+- **Order Processing** - View and execute customer orders with automatic stock updates
+- **Advanced Filtering** - Sort and search inventory by availability, name, price, and more
+- **Discount Management** - Handle sale items and discount codes
+- **RESTful API** - Clean API design with comprehensive filtering capabilities
+- **Cloud Deployment** - Production-ready deployment on Google Cloud Platform
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend:** React, HTML/CSS, Bootstrap
+- **Backend:** Spring Boot, Java, Hibernate
+- **Database:** PostgreSQL (Cloud SQL)
+- **Hosting:** Google Cloud Platform (Compute Engine + Cloud SQL)
+- **Testing:** Postman and curl for API endpoint validation
 
-### `npm test`
+## Project Motivation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project was inspired by internal tools used by grocery stores for daily operations. I wanted to simulate a real-world backend+frontend system with full deployment, cloud database setup, and practical admin functionality.
 
-### `npm run build`
+**Key Learning Outcomes:**
+- Spring Boot API design and development
+- Cloud VM and database setup on Google Cloud Platform
+- State synchronization between frontend and backend
+- Production deployment strategies
+- RESTful API design patterns
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Account Creation & Sign In
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Creating an Account:**
+1. Visit the Sign In page
+2. Click the "Create one here" button
+3. Enter the following information:
+   - A unique username
+   - A password (minimum 6 characters, confirmed)
+   - **Security Note:** Use a throwaway password - passwords are stored in plain text for demo purposes
+4. Click "Create Account" to complete registration
 
-### `npm run eject`
+**Signing In:**
+1. Return to the Sign In page after account creation
+2. Enter your credentials
+3. Click "Sign In" to access the management dashboard
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Item Management
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Creating Items
+1. Click "Create Item" from the main dashboard
+2. Fill out the product form:
+   - Name and description
+   - Image ID and upload image from device
+   - Price (in cents)
+   - Quantity in stock
+   - Optional discount code
+   - Toggle "On Sale" status
+3. Click "Create Item" to save or "Cancel" to discard
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Search & Filter
+- Use the search bar to find items by name or description
+- Sort by price or quantity using dropdown menus (ascending/descending)
+- Reset filters by clearing the search bar and clicking Search, or click the Items link in the navbar
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Item Details & Management
+- Click "View Details" on any item card to see complete information and stock levels
+- From the details page, you can:
+  - Edit item information by clicking "Edit Item"
+  - Delete items permanently
+  - Update product details and save changes
+- Navigate back using the Items button in the navbar
 
-## Learn More
+## Order Management
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Viewing Orders
+Navigate to the Orders tab to see all orders displayed with:
+- Order ID and Customer ID
+- Status (Pending or Executed)
+- Order total and item count
+- Timestamp when order was placed
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Order Search & Filtering
+- **Search by:** Order ID, Customer ID, or specific items
+- **Sort by:** Order time, Customer ID, or price (ascending/descending)
+- Reset filters by clearing the search bar and clicking Search
 
-### Code Splitting
+### Order Processing
+1. Click "View Details" on any order to see:
+   - Complete order breakdown
+   - Individual items with photos and prices
+   - Total order value and timing
+2. Execute orders by clicking "Execute Order"
+   - Marks order as fulfilled
+   - Automatically decrements item stock
+   - Provides confirmation toast notification
+   - Can be done from main Orders page or individual order view
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Security & Logout
 
-### Analyzing the Bundle Size
+Click the "Logout" button in the top right corner to securely return to the sign-in screen and end your session.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## API Documentation
 
-### Making a Progressive Web App
+The system provides RESTful API endpoints with comprehensive filtering capabilities. All endpoints have been thoroughly tested using Postman and curl for reliability and performance.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Deployment
 
-### Advanced Configuration
+The application is deployed on Google Cloud Platform using:
+- **Compute Engine** for application hosting
+- **Cloud SQL** for PostgreSQL database management
+- **Static frontend deployment** using serve
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Thanks for using the Grocery Store Management System!** 
